@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation"; // Étape 1
 import { useEffect, useState } from "react";
 import NumberTicker from "./magicui/number-ticker";
 import { ModeToggle } from "./modeToggle";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
 	const pathname = usePathname();
@@ -31,7 +32,7 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<nav className="fixed top-0 left-0 w-full z-10 flex items-center justify-between px-24 py-4 bg-white/25 dark:bg-black/25 backdrop-filter backdrop-blur-lg shadow-md">
+		<nav className="fixed top-0 left-0 w-full z-10 flex items-center justify-between px-24 py-2 bg-white/25 dark:bg-black/25 backdrop-filter backdrop-blur-lg shadow-md">
 			<div className="flex items-center gap-4">
 				<Link href="/" legacyBehavior passHref>
 					<h1 className="text-2xl font-bold cursor-pointer">Manga Read</h1>
@@ -88,13 +89,15 @@ export default function Navbar() {
 					</>
 				)}
 				<ModeToggle />
-				<a
-					href="https://github.com/FlorianDevv/Mangaread"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Github size={24} />
-				</a>
+				<Button variant="ghost">
+					<a
+						href="https://github.com/FlorianDevv/Mangaread"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Github size={20} />
+					</a>
+				</Button>
 			</div>
 		</nav>
 	);
