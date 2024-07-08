@@ -84,17 +84,19 @@ export default function Home() {
 						href="https://github.com/FlorianDevv/MangaRead"
 						target="_blank"
 						rel="noreferrer"
-						className="flex items-center gap-4 flex-col"
 					>
 						<ButtonNumorphism>
 							See Github <Github />
 						</ButtonNumorphism>
-
-						<Image
+					</a>
+					<a
+						href="https://github.com/FlorianDevv/MangaRead"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
 							src="https://github-readme-stats.vercel.app/api/pin/?username=FlorianDevv&repo=MangaRead&theme=swift"
 							alt="Github"
-							width={400}
-							height={200}
 						/>
 					</a>
 				</div>
