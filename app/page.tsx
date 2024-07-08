@@ -1,6 +1,7 @@
 "use client";
 import ButtonNumorphism from "@/components/buttonNumorphism";
 import BlurFade from "@/components/magicui/blur-fade";
+import { Book, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -19,7 +20,11 @@ export default function Home() {
 						<h1 className="text-6xl font-bold text-center">Manga Read</h1>
 					</BlurFade>
 					<BlurFade delay={0.35} inView>
-						<p className="text-2xl text-center mt-4">Working Progress</p>
+						<p className="text-2xl text-center mt-4">
+							A self-hosted website for reading local manga and watching anime
+							videos.
+						</p>
+						<p className="text-2xl text-center mt-4">🚧 Working Progress 🚧</p>
 						<div className="flex justify-center mt-8 space-x-2">
 							<Link href="/docs/installation">
 								<ButtonNumorphism>Get Started</ButtonNumorphism>
@@ -53,9 +58,39 @@ export default function Home() {
 					className="h-screen flex items-center justify-center"
 				>
 					<p className="text-2xl text-center max-w-2xl px-4">
-						Working Progress
+						🚧 Working Progress 🚧
 					</p>
 				</Parallax>
+
+				<div className="h-screen flex items-center justify-center text-center flex-col space-y-10">
+					<div className="h-10 w-10 rounded-sm bg-[var(--from-color)] flex items-center justify-center shadow-lg backdrop-blur-sm">
+						<Book />
+					</div>
+					<h1 className="font-semibold mt-6 mx-auto md:max-w-none lg:mx-0 leading-tight text-4xl sm:text-5xl">
+						<span className=" bg-clip-text bg-gradient-to-r from-[var(--from-color)] to-[var(--to-color)]">
+							Open Source.
+						</span>
+						<br />
+						<span className="inline-block text-soft mt-2 text-[2rem] sm:mt-3 sm:text-5xl">
+							Built transparently.
+						</span>
+					</h1>
+					<a
+						href="https://github.com/FlorianDevv/MangaRead"
+						target="_blank"
+						rel="noreferrer"
+						className="flex items-center gap-4 flex-col"
+					>
+						<ButtonNumorphism>
+							See Github <Github />
+						</ButtonNumorphism>
+
+						<img
+							src="https://github-readme-stats.vercel.app/api/pin/?username=FlorianDevv&repo=MangaRead&theme=swift"
+							alt="Github"
+						/>
+					</a>
+				</div>
 
 				{/* Additional sections can be added here */}
 			</div>
