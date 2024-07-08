@@ -1,5 +1,6 @@
 "use client";
 import ButtonNumorphism from "@/components/buttonNumorphism";
+import BlurFade from "@/components/magicui/blur-fade";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,16 +15,20 @@ export default function Home() {
 					translateY={[-50, 50]}
 					className="h-screen flex flex-col items-center justify-center"
 				>
-					<h1 className="text-6xl font-bold text-center">Manga Read</h1>
-					<p className="text-2xl text-center mt-4">Working Progress</p>
-					<div className="flex justify-center mt-8 space-x-2">
-						<Link href="/docs/installation">
-							<ButtonNumorphism>Get Started</ButtonNumorphism>
-						</Link>
-						<Link href="/docs">
-							<ButtonNumorphism>Doc</ButtonNumorphism>
-						</Link>
-					</div>
+					<BlurFade delay={0.25} inView>
+						<h1 className="text-6xl font-bold text-center">Manga Read</h1>
+					</BlurFade>
+					<BlurFade delay={0.35} inView>
+						<p className="text-2xl text-center mt-4">Working Progress</p>
+						<div className="flex justify-center mt-8 space-x-2">
+							<Link href="/docs/installation">
+								<ButtonNumorphism>Get Started</ButtonNumorphism>
+							</Link>
+							<Link href="/docs">
+								<ButtonNumorphism>Doc</ButtonNumorphism>
+							</Link>
+						</div>
+					</BlurFade>
 
 					<div className="w-full h-1/2 mt-10" />
 				</Parallax>
