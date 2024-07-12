@@ -39,22 +39,23 @@ export default function Home() {
 			</Parallax>
 
 			{/* Feature Section with Zoom and Slide Effect */}
-			<Parallax
-				scale={[1, 2]}
-				translateY={[-30, -20]}
-				className="h-screen flex items-center justify-center relative"
-			>
-				<div className="relative w-full h-full max-w-2xl mx-auto m-0 border-0">
-					<Image
-						src="/home.webp"
-						alt="Bienvenue"
-						fill
-						className="object-contain w-full h-full m-0 border-0"
-					/>
-					<div className="absolute -bottom-2 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black filter opacity-95 blur-sm" />
-					{/* <BorderBeam className="hidden dark:block" /> */}
-				</div>
-			</Parallax>
+			<BlurFade delay={0.5}>
+				<Parallax
+					scale={[1, 2]}
+					translateY={[-30, -20]}
+					className="h-screen flex items-center justify-center relative"
+				>
+					<div className="relative w-full h-full max-w-2xl mx-auto m-0 border-0">
+						<Image
+							src="/home.webp"
+							alt="Bienvenue"
+							fill
+							className="object-contain w-full h-full m-0 border-0"
+						/>
+						<div className="absolute -bottom-2 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black filter opacity-95 blur-sm" />
+					</div>
+				</Parallax>
+			</BlurFade>
 
 			{/* Text Reveal Section */}
 			<Parallax
