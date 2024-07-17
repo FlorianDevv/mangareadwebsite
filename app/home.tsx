@@ -95,11 +95,9 @@ export default function Home() {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Image
+					<img
 						src="https://github-readme-stats.vercel.app/api/pin/?username=FlorianDevv&repo=MangaRead&theme=swift"
 						alt="Github"
-						width={400}
-						height={140}
 					/>
 				</a>
 			</div>
