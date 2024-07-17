@@ -1,18 +1,19 @@
-"use client";
 import ButtonNumorphism from "@/components/buttonNumorphism";
-import BlurFade from "@/components/magicui/blur-fade";
+
 // import { BorderBeam } from "@/components/magicui/border-beam";
 import { Book, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
+
+import BlurFade from "@/components/magicui/blur-fade";
+import ParallaxWrapper from "@/components/parallaxWrapper";
 
 export default function Home() {
 	return (
 		<>
 			{/* Hero Section */}
-			<Parallax
+			<ParallaxWrapper
 				translateY={[-50, 50]}
 				className="h-screen flex flex-col items-center justify-center min-h-screen overflow-x-hidden"
 			>
@@ -36,11 +37,11 @@ export default function Home() {
 				</BlurFade>
 
 				<div className="w-full h-1/2 mt-10" />
-			</Parallax>
+			</ParallaxWrapper>
 
 			{/* Feature Section with Zoom and Slide Effect */}
 			<BlurFade delay={0.5}>
-				<Parallax
+				<ParallaxWrapper
 					scale={[1, 2]}
 					translateY={[-30, -20]}
 					className="h-screen flex items-center justify-center relative"
@@ -54,18 +55,18 @@ export default function Home() {
 						/>
 						<div className="absolute -bottom-2 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black filter opacity-95 blur-sm" />
 					</div>
-				</Parallax>
+				</ParallaxWrapper>
 			</BlurFade>
 
 			{/* Text Reveal Section */}
-			<Parallax
+			<ParallaxWrapper
 				opacity={[0, 1]}
 				className="h-screen flex items-center justify-center"
 			>
 				<p className="text-2xl text-center max-w-2xl px-4">
 					🚧 Working Progress 🚧
 				</p>
-			</Parallax>
+			</ParallaxWrapper>
 
 			<div className="h-screen flex items-center justify-center text-center flex-col space-y-10">
 				<div className="h-10 w-10 rounded-sm bg-[var(--from-color)] flex items-center justify-center shadow-lg backdrop-blur-sm">
