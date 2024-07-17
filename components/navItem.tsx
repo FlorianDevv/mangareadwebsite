@@ -3,6 +3,7 @@ import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 // components/NavItem.tsx
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui/button";
 
 interface NavItemProps {
 	href: string;
@@ -15,13 +16,14 @@ export default function NavItem({ href, children }: NavItemProps) {
 
 	return (
 		<Link href={href} legacyBehavior passHref>
-			<NavigationMenuLink
+			<Button
+				variant="ghost"
 				className={`transition-colors hover:text-foreground/80 ${
 					isActive ? "text-foreground" : "text-foreground/60"
 				}`}
 			>
 				{children}
-			</NavigationMenuLink>
+			</Button>
 		</Link>
 	);
 }

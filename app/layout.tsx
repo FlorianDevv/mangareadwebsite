@@ -18,7 +18,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={`mt-20 ${inter.className}`}>
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
 					<Navbar />
