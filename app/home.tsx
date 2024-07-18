@@ -40,7 +40,7 @@ export default function Home() {
 			</ParallaxWrapper>
 
 			{/* Feature Section with Zoom and Slide Effect */}
-			<BlurFade delay={0.5}>
+			<BlurFade delay={0.5} className=" overflow-x-hidden">
 				<ParallaxWrapper
 					scale={[1, 2]}
 					translateY={[-30, -20]}
