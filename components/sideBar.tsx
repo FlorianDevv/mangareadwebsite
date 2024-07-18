@@ -26,7 +26,7 @@ const DocSidebarItem = ({
 		{item.items ? (
 			<>
 				<span className="font-bold">{item.title}</span>
-				<ul className="ml-4">
+				<ul>
 					{item.items.map((subItem) => (
 						<DocSidebarItem
 							key={subItem.href}
@@ -44,8 +44,8 @@ const DocSidebarItem = ({
 
 export default function DocSidebar({ items, className }: DocSidebarProps) {
 	return (
-		<nav className={cn("w-64 h-full overflow-y-auto py-8 px-4", className)}>
-			<ul className="space-y-2">
+		<nav className={className}>
+			<ul>
 				{items.map((item) => (
 					<DocSidebarItem key={item.href} item={item} />
 				))}
