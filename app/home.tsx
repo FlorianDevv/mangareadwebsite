@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 import BlurFade from "@/components/magicui/blur-fade";
+import { BorderBeam } from "@/components/magicui/border-beam";
 import ParallaxWrapper from "@/components/parallaxWrapper";
 
 export default function Home() {
@@ -42,13 +43,14 @@ export default function Home() {
 			{/* Feature Section with Zoom and Slide Effect */}
 			<BlurFade delay={0.5}>
 				<ParallaxWrapper
-					scale={[0.5, 2]}
+					scale={[1, 2]}
 					translateY={[-30, -20]}
-					className="h-screen w-auto flex items-center justify-center relative"
+					className="h-screen flex items-center justify-center"
 				>
-					<div className="relative h-full w-full max-w-2xl mx-auto m-0 border-0">
+					<div className="relative h-full w-full max-w-4xl ">
 						<Image src="/home.webp" alt="Bienvenue" fill />
 						<div className="absolute -bottom-2 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black filter opacity-95 blur-sm" />
+						<BorderBeam />
 					</div>
 				</ParallaxWrapper>
 			</BlurFade>
