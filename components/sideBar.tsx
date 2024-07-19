@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import NavItem from "./navItem";
 
 // Define the type for a single documentation item

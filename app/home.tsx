@@ -19,10 +19,12 @@ export default function Home() {
 				className="h-screen flex flex-col items-center justify-center min-h-screen overflow-x-hidden"
 			>
 				<BlurFade delay={0.25} inView>
-					<h1 className="text-6xl font-bold text-center">Manga Read</h1>
+					<h1 className="md:text-6xl text-4xl font-bold text-center">
+						Manga Read
+					</h1>
 				</BlurFade>
 				<BlurFade delay={0.35} inView>
-					<p className="text-2xl text-center mt-4">
+					<p className="md:text-2xl text-lg text-center mt-4 mx-8">
 						A self-hosted website for reading local manga and watching anime
 						videos.
 					</p>
@@ -44,13 +46,17 @@ export default function Home() {
 			<BlurFade delay={0.5}>
 				<ParallaxWrapper
 					scale={[1, 2]}
-					translateY={[-30, -20]}
-					className="h-screen flex items-center justify-center"
+					className="min-h-screen flex items-center justify-center px-4 "
 				>
-					<div className="relative h-full w-full max-w-4xl ">
-						<Image src="/home.webp" alt="Bienvenue" fill />
-						<div className="absolute -bottom-2 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black filter opacity-95 blur-sm" />
+					<div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+						<Image
+							src="/home.webp"
+							alt="Bienvenue"
+							fill
+							className="rounded-lg object-cover"
+						/>
 						<BorderBeam />
+						<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-b from-transparent to-black opacity-70" />
 					</div>
 				</ParallaxWrapper>
 			</BlurFade>

@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import React from "react";
 // Ajout des imports nécessaires pour le Breadcrumb
 
 export async function generateStaticParams() {
@@ -45,21 +46,15 @@ export default async function DocPage({
 					<BreadcrumbItem>
 						<BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
 					</BreadcrumbItem>
-					{breadcrumbItems.map((part, index) => (
-						<>
-							<BreadcrumbSeparator
-								key={`separator-${
-									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-									index
-								}`}
-							/>
-							{/* biome-ignore lint/suspicious/noArrayIndexKey: <explanation> */}
-							<BreadcrumbItem key={index}>
+					{breadcrumbItems.map((part) => (
+						<React.Fragment key={part}>
+							<BreadcrumbSeparator />
+							<BreadcrumbItem>
 								<BreadcrumbLink className="text-foreground">
 									{capitalize(part)}
 								</BreadcrumbLink>
 							</BreadcrumbItem>
-						</>
+						</React.Fragment>
 					))}
 				</BreadcrumbList>
 			</Breadcrumb>
@@ -69,7 +64,6 @@ export default async function DocPage({
 		</div>
 	);
 }
-
 function getAllFiles(dir = "mdx", resultArray: string[] = []) {
 	let localResultArray = [...resultArray];
 	const files = fs.readdirSync(path.join(process.cwd(), dir));

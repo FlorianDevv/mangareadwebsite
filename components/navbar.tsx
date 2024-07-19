@@ -1,3 +1,4 @@
+import { docItems } from "@/app/docs/layout";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -6,6 +7,8 @@ import {
 	Sheet,
 	SheetClose,
 	SheetContent,
+	SheetHeader,
+	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { Github, Menu, Star } from "lucide-react";
@@ -14,7 +17,7 @@ import NumberTicker from "./magicui/number-ticker";
 import { ModeToggle } from "./modeToggle";
 import NavItem from "./navItem";
 import { Button } from "./ui/button";
-
+import { ScrollArea } from "./ui/scroll-area";
 async function getGitHubStars() {
 	try {
 		const response = await fetch(
@@ -32,7 +35,7 @@ export default async function Navbar() {
 	const stars = await getGitHubStars();
 
 	return (
-		<nav className="fixed top-0 left-0 w-full z-10 flex items-center justify-between px-4 lg:px-24 py-2 bg-white/25 dark:bg-black/25 backdrop-filter backdrop-blur-lg ">
+		<nav className="fixed top-0 left-0 w-full z-10 flex items-center justify-between px-4 lg:px-24 py-2 bg-white/25 dark:bg-black/25 backdrop-filter backdrop-blur-lg">
 			<div className="flex items-center text-sm lg:gap-6">
 				{/* Mobile Menu */}
 				<div className="md:hidden">
@@ -43,29 +46,45 @@ export default async function Navbar() {
 							</Button>
 						</SheetTrigger>
 						<SheetContent side="left">
-							<NavigationMenu orientation="vertical" className="mt-10">
-								<ul className="flex flex-col items-start gap-4">
-									<NavigationMenuItem>
-										<SheetClose asChild>
-											<Link href="/">
-												<h1 className="text-xl font-bold cursor-pointer">
-													Manga Read
-												</h1>
-											</Link>
-										</SheetClose>
-									</NavigationMenuItem>
-									<NavigationMenuItem>
-										<SheetClose asChild>
-											<NavItem href="/docs">Documentation</NavItem>
-										</SheetClose>
-									</NavigationMenuItem>
-									<NavigationMenuItem>
-										<SheetClose asChild>
-											<NavItem href="/demos">Demos</NavItem>
-										</SheetClose>
-									</NavigationMenuItem>
-								</ul>
-							</NavigationMenu>
+							<SheetTitle>
+								<SheetClose asChild>
+									<Link href="/">
+										<h1 className="text-xl font-bold cursor-pointer">
+											Manga Read
+										</h1>
+									</Link>
+								</SheetClose>
+							</SheetTitle>
+							<ScrollArea className="h-full py-2 pr-6">
+								<NavigationMenu orientation="vertical" className="mt-10">
+									<ul className="flex flex-col items-start gap-4">
+										<NavigationMenuItem>
+											<div>
+												<SheetClose asChild>
+													<Link href="/docs" className="font-medium">
+														Documentation
+													</Link>
+												</SheetClose>
+												<ul className="ml-6 space-y-2">
+													{/* Dynamic data from docs */}
+													{docItems[0].items.map((item) => (
+														<li key={item.href} className="text-sm">
+															<SheetClose asChild>
+																<Link href={item.href}>{item.title}</Link>
+															</SheetClose>
+														</li>
+													))}
+												</ul>
+											</div>
+										</NavigationMenuItem>
+										<NavigationMenuItem>
+											<SheetClose asChild>
+												<NavItem href="/demos">Demos</NavItem>
+											</SheetClose>
+										</NavigationMenuItem>
+									</ul>
+								</NavigationMenu>
+							</ScrollArea>
 						</SheetContent>
 					</Sheet>
 				</div>

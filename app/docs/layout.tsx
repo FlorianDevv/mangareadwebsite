@@ -1,7 +1,7 @@
 import DocSidebar from "@/components/sideBar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const docItems = [
+export const docItems = [
 	{
 		title: "Getting Started",
 		href: "/docs/getting-started",
@@ -9,6 +9,14 @@ const docItems = [
 			{ title: "Introduction", href: "/docs" },
 			{ title: "Installation", href: "/docs/installation" },
 			{ title: "Configuration", href: "/docs/configuration" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
+			{ title: "???", href: "/docs" },
 			{ title: "???", href: "/docs" },
 			{ title: "???", href: "/docs" },
 			{ title: "???", href: "/docs" },
