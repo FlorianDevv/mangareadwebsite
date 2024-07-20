@@ -1,22 +1,22 @@
 import ButtonNumorphism from "@/components/buttonNumorphism";
 
+import BlurFade from "@/components/magicui/blur-fade";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import ParallaxWrapper from "@/components/parallaxWrapper";
+import homeImage from "@/public/home.webp";
 // import { BorderBeam } from "@/components/magicui/border-beam";
 import { Book, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import BlurFade from "@/components/magicui/blur-fade";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import ParallaxWrapper from "@/components/parallaxWrapper";
-
 export default function Home() {
 	return (
-		<div className="overflow-x-hidden">
+		<div className="overflow-x-hidden ">
 			{/* Hero Section */}
 			<ParallaxWrapper
 				translateY={[-50, 50]}
-				className="h-screen flex flex-col items-center justify-center min-h-screen overflow-x-hidden"
+				className="h-screen flex flex-col items-center justify-center min-h-screen overflow-x-hidden -mb-96"
 			>
 				<BlurFade delay={0.25} inView>
 					<h1 className="md:text-6xl text-4xl font-bold text-center">
@@ -45,18 +45,18 @@ export default function Home() {
 			{/* Feature Section with Zoom and Slide Effect */}
 			<BlurFade delay={0.5}>
 				<ParallaxWrapper
-					scale={[1, 2]}
-					className="min-h-screen flex items-center justify-center px-4 "
+					scale={[1, 2.5]}
+					className="min-h-screen flex items-center justify-center px-6"
 				>
-					<div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+					<div className="relative w-full max-w-2xl">
 						<Image
-							src="/home.webp"
+							src={homeImage}
 							alt="Bienvenue"
-							fill
-							className="rounded-lg object-cover"
+							className="rounded-lg object-contain"
+							placeholder="blur"
 						/>
 						<BorderBeam />
-						<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-b from-transparent to-black opacity-70" />
+						<div className="absolute inset-x-0 bottom-0 h-2/4 bg-gradient-to-b from-transparent to-black opacity-80" />
 					</div>
 				</ParallaxWrapper>
 			</BlurFade>
@@ -101,6 +101,12 @@ export default function Home() {
 					<img
 						src="https://github-readme-stats.vercel.app/api/pin/?username=FlorianDevv&repo=MangaRead&theme=swift"
 						alt="Github"
+						className="dark:hidden block"
+					/>
+					<img
+						src="https://github-readme-stats.vercel.app/api/pin/?username=FlorianDevv&repo=MangaRead&theme=github_dark"
+						alt="Github"
+						className="hidden dark:block"
 					/>
 				</a>
 			</div>
